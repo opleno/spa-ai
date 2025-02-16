@@ -14,7 +14,9 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4">
-      <TabNavigation tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+      <div className="max-w-2xl mx-auto mb-12">
+        <TabNavigation tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+      </div>
       <TabContent activeTab={activeTab} />
     </div>
   );

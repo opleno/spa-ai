@@ -7,23 +7,35 @@ export default function TabContent({ activeTab }: TabContentProps) {
     switch (activeTab) {
       case 'home':
         return (
-          <div>
-            <h1 className="text-2xl font-bold mb-4">Welcome to the Home Page</h1>
-            <p>This is the home content.</p>
+          <div className="space-y-6">
+            <h1 className="text-4xl font-bold text-[#6d0858] mb-6">Welcome to Our Platform</h1>
+            <div className="bg-white/60 rounded-xl p-6 shadow-lg backdrop-blur-sm">
+              <p className="text-lg leading-relaxed">
+                This is the home content. We provide amazing services and solutions.
+              </p>
+            </div>
           </div>
         );
       case 'about':
         return (
-          <div>
-            <h1 className="text-2xl font-bold mb-4">About Us</h1>
-            <p>This is the about content.</p>
+          <div className="space-y-6">
+            <h1 className="text-4xl font-bold text-[#6d0858] mb-6">About Us</h1>
+            <div className="bg-white/60 rounded-xl p-6 shadow-lg backdrop-blur-sm">
+              <p className="text-lg leading-relaxed">
+                Learn about our mission and values. We're committed to excellence.
+              </p>
+            </div>
           </div>
         );
       case 'contact':
         return (
-          <div>
-            <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
-            <p>This is the contact content.</p>
+          <div className="space-y-6">
+            <h1 className="text-4xl font-bold text-[#6d0858] mb-6">Contact Us</h1>
+            <div className="bg-white/60 rounded-xl p-6 shadow-lg backdrop-blur-sm">
+              <p className="text-lg leading-relaxed">
+                Get in touch with us. We'd love to hear from you.
+              </p>
+            </div>
           </div>
         );
       default:
@@ -31,5 +43,9 @@ export default function TabContent({ activeTab }: TabContentProps) {
     }
   };
 
-  return <div className="p-4">{renderContent()}</div>;
+  return (
+    <div className="mt-8 px-4 py-6 max-w-4xl mx-auto">
+      {renderContent()}
+    </div>
+  );
 } 
