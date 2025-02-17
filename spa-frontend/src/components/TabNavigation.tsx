@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface Tab {
   id: string;
@@ -26,20 +27,23 @@ export default function TabNavigation({ tabs, activeTab, setActiveTab }: TabNavi
           className="w-20 md:w-28 h-20 md:h-28 object-contain ml-2"
           priority
         />
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 text-[#6d0858] mr-2"
-        >
-          {isMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-[#6d0858] mr-2"
+          >
+            {isMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
       <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row w-full md:w-auto space-y-2 md:space-y-0 md:space-x-1 pb-2 md:pb-0`}>
         {tabs.map((tab) => (

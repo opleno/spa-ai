@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { TranslationsProvider } from '@/context/TranslationsContext';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="min-h-screen py-8">{children}</main>
+        <TranslationsProvider>
+          <main className="min-h-screen py-8">{children}</main>
+        </TranslationsProvider>
       </body>
     </html>
   );
